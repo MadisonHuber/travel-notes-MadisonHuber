@@ -1,0 +1,116 @@
+body {
+    color: #414141;
+}
+
+h1, h2 {
+    padding: 10px;
+    margin: 10px;
+}
+
+h3 {
+    padding-left: 20px;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    padding: 2px;
+    margin: 3px;
+    border: 100px;
+}
+
+.heading {
+    font-style: italic;
+    font-size: 200%;
+    /* padding: 10px; */
+}
+
+.top {
+    padding: 5%;
+    background-color: lightblue;
+}
+
+.choice {
+    font-size: x-large;
+}
+
+.choice:hover, .choice:link, .choice:visited, .choice:active {
+    color: black;
+    text-decoration: none;
+}
+
+.page {
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+.info {
+    padding: 3%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.info br {
+    border: none;
+    border-top: 0px;
+    text-align: center;
+    overflow: visible;
+    height: 2px;
+    border-bottom: 0px;
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: 0;
+}
+
+#aside {
+    padding: 3%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-style: italic;
+}
+
+span {
+    font-style: normal;
+}
+
+li ol {
+    padding-left: 30px;
+}
+
+li {
+    margin: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.pic {
+    float: right;
+    width: 140px;
+    margin: 10px;
+    margin-top: 30px;
+}
+
+p {
+    margin: 10px;
+    padding: 8px;
+    /* margin-bottom: 5px; */
+}
+
+hr {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.content {
+    padding-left: 20px;
+}
