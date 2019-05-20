@@ -85,9 +85,11 @@ li {
 
 .pic {
     float: right;
-    width: 140px;
+    width: 150px;
     padding: 10px;
     margin: 20px;
+    margin-right: 60px;
+    margin-top: 0px;
 }
 
 p {
