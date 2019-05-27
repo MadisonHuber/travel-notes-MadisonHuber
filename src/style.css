@@ -66,7 +66,8 @@ summary {
     font-family: "Lora", serif;
 }
 
-@media only screen and (min-width: 961px) {
+/* Rules for desktop but currently tablet size is also included here */
+@media only screen and (min-width: 401px) {
 
     .top {
         padding: 4.5%;
