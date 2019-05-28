@@ -66,6 +66,64 @@ summary {
     font-family: "Lora", serif;
 }
 
+
+.gallery__master {
+    list-style: none;
+    font-size: 0.75em;
+    display: flex;
+    overflow-x: auto;
+    height: 20vh;
+}
+
+.gallery__thumb {
+    height: 20vh;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__thumb.selected .gallery__thumb-img-wrap {
+    border: 2px solid #333;
+}
+
+.gallery__thumb:hover {
+    cursor: pointer;
+}
+
+.gallery__thumb-img-wrap {
+    display: block;
+    border: 2px solid black;
+    width: 19vh;
+    height: 19vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery__thumb-img {
+    max-width: 19vh;
+    max-height: 19vh;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.gallery__detail-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 78vh;
+}
+
+.gallery__detail-img {
+    margin-top: 2vh;
+    max-height: 78vh;
+    max-width: 98vw;
+}
+
+
+
 /* Rules for desktop but currently tablet size is also included here */
 @media only screen and (min-width: 401px) {
 
