@@ -126,6 +126,10 @@ summary {
     text-align: center;
 }
 
+.gallery__thumb.selected .gallery__thumb-img-wrap {
+    background: #C60C30;
+}
+
 
 
 /* Rules for desktop but currently tablet size is also included here */
