@@ -16,7 +16,8 @@ let main = () => {
 
 type Image = {
     src: string,
-    thumbSrc: string
+    thumbSrc: string,
+    caption: string
 }
 
 type GalleryProps = {
@@ -47,6 +48,9 @@ class Gallery extends React.Component<GalleryProps, GalleryState> {
                             onSelect={(image) => this.selectedHandler(image)} />
                 })
             }</ul>
+            <div className="gallery__caption">{
+                this.state.selected.caption
+            }</div>
             <div className="gallery__detail">
                 <div className="gallery__detail-img-wrap">
                     <img className="gallery__detail-img" 

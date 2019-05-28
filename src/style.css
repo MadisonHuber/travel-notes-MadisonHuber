@@ -122,6 +122,10 @@ summary {
     max-width: 98vw;
 }
 
+.gallery__caption {
+    text-align: center;
+}
+
 
 
 /* Rules for desktop but currently tablet size is also included here */
