@@ -77,15 +77,22 @@ summary {
 
 .gallery__thumb {
     height: 20vh;
-    margin-right: 1em;
+    /* margin-right: 1em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: darkgray; */
+    background-color: rgb(220, 220, 220);
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
-    border: 2px solid #333;
+    /* border: 2px solid #333; */
+    background-color: darkgray;
+}
+
+.gallery__master {
+    background-color: rgb(220, 220, 220);
 }
 
 .gallery__thumb:hover {
@@ -94,12 +101,13 @@ summary {
 
 .gallery__thumb-img-wrap {
     display: block;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 19vh;
     height: 19vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: darkgray; */
 }
 
 .gallery__thumb-img {
@@ -127,7 +135,8 @@ summary {
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
-    background: #C60C30;
+    /* background: #C60C30; */
+    background-color: darkgray;
 }
 
 
