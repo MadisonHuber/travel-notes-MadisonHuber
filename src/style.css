@@ -76,7 +76,7 @@ summary {
 }
 
 .gallery__thumb {
-    height: 20vh;
+    height: 19vh;
     /* margin-right: 1em; */
     display: flex;
     flex-direction: column;
@@ -84,6 +84,8 @@ summary {
     align-items: center;
     /* background-color: darkgray; */
     background-color: rgb(220, 220, 220);
+    margin: 0px;
+    padding: 0px;
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
@@ -93,6 +95,7 @@ summary {
 
 .gallery__master {
     background-color: rgb(220, 220, 220);
+    height: 19vh;
 }
 
 .gallery__thumb:hover {
@@ -125,7 +128,7 @@ summary {
 }
 
 .gallery__detail-img {
-    margin-top: 2vh;
+    padding-top: 2vh;
     max-height: 78vh;
     max-width: 98vw;
 }
