@@ -17,10 +17,13 @@ h1, h2, h3 {
 
 .inner {
     margin: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
     padding-left: 1%;
     padding-right: 3.5%;
     display: flex;
     justify-content: flex-start;
+    background-color: #E8E8E8;
 }
 
 a {
@@ -43,10 +46,11 @@ a {
     /* padding-right: 10%; */
     padding: 0%;
     margin: 0%;
+    margin-right: 0%;
     margin-left: 2%;
     margin-right: 15%;
     vertical-align: bottom;
-    font-style: italic;
+    /* font-style: italic; */
     font-size: 6.5vh;
     bottom: -42px;
     position: relative;
@@ -63,7 +67,7 @@ a {
     text-decoration: none;
 }
 .page {
-    background-color: #F5F5F5;
+    background-color: #F8F8F8;
     min-height: 100%;
 }
 
@@ -182,7 +186,16 @@ summary {
         display: flex;
         justify-content: space-between;
         margin: 0%;
-        height: 14vh;
+        height: 18vh;
+        flex-direction: column;
+    }
+
+    #majortitle {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        vertical-align: center;
+        /* bottom: -20px; */
     }
 
     h1, h2 {
@@ -207,12 +220,12 @@ summary {
         margin: 0 auto;
         font-size: 2vw;
         position: relative;
-        bottom: -70px;
+        /* bottom: -70px; */
         padding-left: 2%;
     }
 
     .inner {
-        margin-right: 2%;
+        padding-right: 2%;
     }
 
     .choice:hover {
@@ -263,7 +276,7 @@ summary {
     .content {
         height: 100%;
         height: 100vh;
-        background-color: #F5F5F5;
+        background-color: #F8F8F8;
     }
 
     summary {
@@ -272,7 +285,7 @@ summary {
 
     .pic {
         float: right;
-        width: 150px;
+        width: 200px;
         padding: 10px;
         margin: 20px;
         margin-right: 60px;
@@ -281,7 +294,7 @@ summary {
 
     .another {
         padding-left: 3%;
-        background-color: #F5F5F5;
+        background-color: #F8F8F8;
     }
 
     .info {
@@ -297,13 +310,13 @@ summary {
     body {
         padding-left: 1%;
         padding-right: 1%;
-        background-color: #F5F5F5;
+        background-color: #F8F8F8;
         width: 100%;
     }
 
     .top {
         overflow: scroll;
-        font-size: x-large;
+        /* font-size: x-large; */
         display: flex;
         padding-top: 1%;
         padding-bottom: 3%;
@@ -321,13 +334,15 @@ summary {
         font-size: 4vh;
         position: relative;
         top: 2px;
-        text-align: right;
+        text-align: center;
+        margin: 0%;
     }
 
     .inner {
         /* flex-direction: column; */
         position: relative;
-        top: 5px;
+        padding: 0%;
+        top: 11px;
     }
 
     .heading {
