@@ -25,6 +25,11 @@ export default [
         "caption": "Garden in Austria"
     },
     {
+        "thumbSrc": "./img/train-thumb.jpg",
+        "src": "./img/train.jpg",
+        "caption": "View from a train ride through Germany"
+    },
+    {
         "thumbSrc": "./img/prague-thumb.jpg",
         "src": "./img/prague.jpg",
         "caption": "Astronomical Clock in Prague"
