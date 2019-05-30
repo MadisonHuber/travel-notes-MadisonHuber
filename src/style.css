@@ -15,6 +15,14 @@ h1, h2, h3 {
     font-family: "Lora", serif;
 }
 
+.inner {
+    margin: 0%;
+    padding-left: 1%;
+    padding-right: 3.5%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 a {
     text-decoration: none;
 }
@@ -26,6 +34,27 @@ a {
 }
 .choice {
     font-family: "Lora", serif;
+    color: #414141;
+    /* margin: 5%; */
+    padding: 1%;
+}
+
+#majortitle {
+    /* padding-right: 10%; */
+    padding: 0%;
+    margin: 0%;
+    margin-left: 2%;
+    margin-right: 15%;
+    vertical-align: bottom;
+    font-style: italic;
+    font-size: 6.5vh;
+    bottom: -42px;
+    position: relative;
+
+}
+
+#majortitle:hover {
+    text-decoration: none;
     color: #414141;
 }
 
@@ -148,10 +177,12 @@ summary {
 @media only screen and (min-width: 401px) {
 
     .top {
-        padding: 4.5%;
-        background-color: lightgray;
+        /* padding: 4.5%; */
+        background-color: rgb(220, 220, 220);
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        margin: 0%;
+        height: 14vh;
     }
 
     h1, h2 {
@@ -174,7 +205,14 @@ summary {
 
     .choice {
         margin: 0 auto;
-        font-size: 200%;
+        font-size: 2vw;
+        position: relative;
+        bottom: -70px;
+        padding-left: 2%;
+    }
+
+    .inner {
+        margin-right: 2%;
     }
 
     .choice:hover {
@@ -271,7 +309,25 @@ summary {
         padding-bottom: 3%;
         justify-content: space-between;
         overflow: wrap;
-        background-color: darkgray;
+        background-color: rgb(220, 220, 220);
+        flex-direction: column;
+    }
+
+    .choice {
+        font-size: 2.5vh;
+    }
+
+    #majortitle {
+        font-size: 4vh;
+        position: relative;
+        top: 2px;
+        text-align: right;
+    }
+
+    .inner {
+        /* flex-direction: column; */
+        position: relative;
+        top: 5px;
     }
 
     .heading {
