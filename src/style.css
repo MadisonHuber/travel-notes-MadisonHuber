@@ -168,6 +168,7 @@ summary {
 
 .gallery__caption {
     text-align: center;
+    padding-top: 1%;
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
@@ -411,5 +412,13 @@ summary {
         padding-left: 2%;
         font-size: 130%;
         padding-top: 3%;
+    }
+
+    .gallery__master {
+        padding: 0%;
+    }
+
+    .gallery__detail-img {
+        padding: 0%;
     }
 }
