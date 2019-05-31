@@ -38,23 +38,16 @@ a {
 .choice {
     font-family: "Lora", serif;
     color: #414141;
-    /* margin: 5%; */
     padding: 1%;
 }
 
 #majortitle {
-    /* padding-right: 10%; */
     padding: 0%;
     margin: 0%;
     margin-right: 0%;
     margin-left: 2%;
     margin-right: 15%;
-    vertical-align: bottom;
-    /* font-style: italic; */
     font-size: 6.5vh;
-    bottom: -42px;
-    position: relative;
-
 }
 
 #majortitle:hover {
@@ -110,19 +103,16 @@ summary {
 
 .gallery__thumb {
     height: 19vh;
-    /* margin-right: 1em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: darkgray; */
     background-color: rgb(220, 220, 220);
     margin: 0px;
     padding: 0px;
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
-    /* border: 2px solid #333; */
     background-color: darkgray;
 }
 
@@ -137,13 +127,11 @@ summary {
 
 .gallery__thumb-img-wrap {
     display: block;
-    /* border: 2px solid black; */
     width: 19vh;
     height: 19vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: darkgray; */
 }
 
 .gallery__thumb-img {
@@ -172,7 +160,6 @@ summary {
 }
 
 .gallery__thumb.selected .gallery__thumb-img-wrap {
-    /* background: #C60C30; */
     background-color: darkgray;
 }
 
@@ -182,7 +169,6 @@ summary {
 @media only screen and (min-width: 401px) {
 
     .top {
-        /* padding: 4.5%; */
         background-color: rgb(220, 220, 220);
         display: flex;
         justify-content: space-between;
@@ -191,12 +177,22 @@ summary {
         flex-direction: column;
     }
 
+    .help {
+        height: 13vh;
+        align-content: center;
+        display: flex;
+        vertical-align: middle;
+        line-height: 13vh;
+    }
+
     #majortitle {
-        text-align: center;
-        margin: 0px;
+        margin: 0 0 0 0;
         padding: 0px;
-        vertical-align: center;
-        /* bottom: -20px; */
+    }
+
+    #majortitle.choice {
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
     }
 
     h1, h2 {
@@ -221,12 +217,7 @@ summary {
         margin: 0 auto;
         font-size: 2vw;
         position: relative;
-        /* bottom: -70px; */
         padding-left: 2%;
-    }
-
-    .inner {
-        padding-right: 2%;
     }
 
     .choice:hover {
@@ -317,7 +308,6 @@ summary {
 
     .top {
         overflow: scroll;
-        /* font-size: x-large; */
         display: flex;
         padding-top: 1%;
         padding-bottom: 3%;
@@ -340,7 +330,6 @@ summary {
     }
 
     .inner {
-        /* flex-direction: column; */
         position: relative;
         padding: 0%;
         top: 11px;
