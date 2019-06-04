@@ -19,15 +19,19 @@
   },
   "homepage": "https://github.com/cph426-2019/travel-notes-MadisonHuber#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.1.2",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.5",
     "parcel": "^1.12.3"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
     "@types/express-handlebars": "0.0.32",
     "@types/handlebars": "^4.1.0",
+    "@types/mysql2": "github:types/mysql2",
     "@types/node": "^12.0.3",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",

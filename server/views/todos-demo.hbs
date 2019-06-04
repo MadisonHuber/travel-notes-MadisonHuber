@@ -1,0 +1,11 @@
+<ul>
+    {{#each todos}}
+        <li>
+            {{#if url}}
+                <a href={{this.url}}>{{this.description}}</a>
+            {{else}}
+                {{description}}
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>

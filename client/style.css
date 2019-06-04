@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.day {
+    font-style: italic;
+}
+
 body {
     color: #414141;
     font-size: 15px;
