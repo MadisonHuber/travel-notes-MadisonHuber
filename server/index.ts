@@ -3,6 +3,8 @@ dotenv.config();
 
 import { DB, Rows } from "./db";
 
+import admin from "./admin";
+
 import * as express from "express";
 import * as exphbs from "express-handlebars";
 import moment = require("moment");
@@ -10,6 +12,9 @@ import moment = require("moment");
 let app = express();
 
 app.use(express.static("dist/"));
+app.use(express.urlencoded({extended: true}));
+
+app.use("/admin", admin);
 
 app.get("/", (req, res) => {
     res.render("index", { title: "Notes" });
