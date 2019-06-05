@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ts-node server/index.ts",
     "build": "rm -rf dist/ && parcel build client/{*.css,gallery.tsx,main.ts}",
-    "prod": "git pull && npm install && npm run build && sudo NODE_ENV=production npm run start",
+    "prod": "git reset --hard && git pull && npm install && npm run build && sudo NODE_ENV=production npm run start",
     "deploy": "ssh -i ~/.ssh/COMP426-2019.pem ubuntu@18.222.129.117 'sudo service blog_app restart'"
   },
   "repository": {
