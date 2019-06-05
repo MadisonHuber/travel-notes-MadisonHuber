@@ -23,8 +23,8 @@ h1, h2, h3 {
     margin: 0%;
     margin-left: 0%;
     margin-right: 0%;
-    padding-left: 1%;
-    padding-right: 3.5%;
+    /* padding-left: 1%;
+    padding-right: 3.5%; */
     display: flex;
     justify-content: flex-start;
     background-color: #E8E8E8;
@@ -43,6 +43,8 @@ a {
     font-family: "Lora", serif;
     color: #414141;
     padding: 1%;
+    width: 20%;
+    text-align: center;
 }
 
 #majortitle {
@@ -52,6 +54,8 @@ a {
     margin-left: 2%;
     margin-right: 15%;
     font-size: 6.5vh;
+    font-family: "Lora", serif;
+    color: #414141;
 }
 
 #majortitle:hover {
@@ -226,6 +230,7 @@ summary {
 
     .choice:hover {
         color: gray;
+        background-color: rgb(220, 220, 220);
     }
 
     .page {
