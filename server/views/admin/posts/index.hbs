@@ -1,0 +1,27 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Posts</li>
+  </ol>
+</nav>
+<h2 class="pt-2">Posts <a href="/admin/posts/new" class="btn btn-sm btn-light">New</a></h2>
+<ul>
+    {{#each posts}}
+    <li><a href="/admin/posts/{{ id }}">{{ title }}</a></li>
+    {{/each}}
+</ul>
+
+<table class="table">
+    <thead>
+        <tr><th>ID</th><th>title</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        {{#each posts}}
+        <tr>
+            <td>{{ id }}</td>
+            <td>{{ title }}</td>
+            <td><a href="/admin/posts/{{ id }}" class="btn btn-sm btn-primary">Edit</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

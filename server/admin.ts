@@ -2,6 +2,7 @@ import * as express from "express";
 import { DB, Rows, InsertResult } from "./db";
 import * as bcrypt from "bcrypt";
 import * as cookieParser from "cookie-parser";
+import { EILSEQ } from "constants";
 
 // Helper function to find path of current page
 let path = (req: express.Request): string => {
@@ -75,7 +76,7 @@ router.get("/todos/new", (req, res) => {
             description: "",
             url: ""
         },
-    })
+    });
 });
 
 // The route for creating a new todo is just '/todos' because the HTTP
@@ -102,7 +103,7 @@ router.post("/todos", async (req, res) => {
         // need to know the id that the DB assigned to our new record.
         let [result] = await DB.execute<InsertResult>(sql, params);
         res.redirect(`${path(req)}/${result.insertId}?message=Saved!`);
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         res.redirect(`${path(req)}?message=Error Saving`);
     }
@@ -119,7 +120,7 @@ router.get("/todos/:id", async (req, res) => {
                 todo: rows[0],
                 action: path(req),
                 layout: "admin",
-                 message: req.query.message
+                message: req.query.message
                 // message: req.params.message
             });
         } else {
@@ -146,7 +147,7 @@ router.post("/todos/:id", async (req, res) => {
         };
         await DB.execute<Rows>(sql, params);
         res.redirect(`${path(req)}?message=Saved!`);
-    } catch(e) {
+    } catch (e) {
         console.error(e);
         res.redirect(`${path(req)}?message=Error Saving`);
     }
@@ -161,7 +162,129 @@ router.post("/todos/:id/delete", async (req, res) => {
     try {
         await DB.execute<Rows>(sql, params);
         res.redirect(`${path(req)}/../../`);
-    } catch(e) {
+    } catch (e) {
+        console.error(e);
+        res.redirect(`${path(req)}/../../`);
+    }
+});
+
+/* ====================== */
+
+/* POST */
+
+/* ====================== */
+
+// list
+router.get("/posts", async (req, res) => {
+    let [rows] = await DB.query<Rows>("SELECT * FROM posts ORDER BY publishAt DESC");
+    res.render("admin/posts/index", {
+        posts: rows,
+        layout: "admin"
+    });
+});
+
+// editor for new post
+router.get("/posts/new", (req, res) => {
+    res.render("admin/posts/editor", {
+        action: `${req.baseUrl}/posts`,
+        layout: "admin",
+        post: {
+            title: "",
+            body: "",
+            publishAt: ""
+        },
+    });
+});
+
+// creating new post
+router.post("/posts", async (req, res) => {
+    try {
+        let sql = `INSERT INTO posts
+                    (title, body, publishAt)
+                    VALUES
+                    (:title, :body, :publishAt)`;
+        let params = {
+            title: req.body.title,
+            body: req.body.body,
+            publishAt: req.body.publishAt
+        };
+
+        if (req.body.title === "") {
+            res.redirect(path(req) + "/new?message=Invalid title");
+            return;
+        } else if (req.body.body === "") {
+            res.redirect(path(req) + "/new?message=Invalid body");
+            return;
+        } else if (req.body.publishAt === ""
+            || !(new RegExp('[0-9]{4}-[0-9]{2}-[0-9]{2}').test(req.body.publishAt))
+        ) {
+            res.redirect(path(req) + "/new?message=Invalid publishAt");
+            return;
+        }
+
+        // create new record in DB
+        let [result] = await DB.execute<InsertResult>(sql, params);
+        res.redirect(`${path(req)}/${result.insertId}?message=Saved!`);
+    } catch (e) {
+        console.error(e);
+        res.redirect(`${path(req)}?message=Error Saving`);
+    }
+});
+
+// view editor for existing post
+router.get("/posts/:id", async (req, res) => {
+    let sql = "SELECT * FROM posts WHERE id=:id";
+    let params = { id: req.params.id };
+    try {
+        let [rows] = await DB.query<Rows>(sql, params);
+        if (rows.length === 1) {
+            res.render("admin/posts/editor", {
+                post: rows[0],
+                action: path(req),
+                layout: "admin",
+                message: req.query.message
+            });
+        } else {
+            res.redirect(`${path(req)}/../`);
+        }
+    } catch (e) {
+        console.error(e);
+        res.redirect(`${path(req)}/../`);
+    }
+});
+
+// post for editor for post
+router.post("/posts/:id", async (req, res) => {
+    try {
+        let sql = `UPDATE posts
+                    SET title=:title,
+                    body=:body,
+                    publishAt=:publishAt
+                    WHERE id=:id`;
+        let params = {
+            id: req.params.id,
+            title: req.body.title,
+            body: req.body.body,
+            publishAt: req.body.publishAt
+        };
+        await DB.execute<Rows>(sql, params);
+        res.redirect(`${path(req)}?message=Saved!`);
+    } catch (e) {
+        console.error(e);
+        res.redirect(`${path(req)}?message=Error Saving`);
+    }
+});
+
+// delete post
+router.post("/posts/:id/delete", async (req, res) => {
+    let sql = "DELETE FROM posts WHERE id=:id";
+    let params = {
+        id: req.params.id
+    };
+    try {
+        await DB.execute<Rows>(sql, params);
+        res.redirect(`${path(req)}/../../`);
+    } catch (e) {
         console.error(e);
         res.redirect(`${path(req)}/../../`);
     }
